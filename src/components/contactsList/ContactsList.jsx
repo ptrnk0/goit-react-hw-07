@@ -4,7 +4,6 @@ import Contact from "../contact/Contact";
 
 const ContactsList = () => {
 	const contacts = useSelector(selectContacts);
-	console.log(contacts);
 
 	return (
 		<ul>
