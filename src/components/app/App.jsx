@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import ContacForm from "../contacForm/ContacForm";
-import ContactsList from "../contactsList/ContactsList";
+import ContactList from "../contactList/ContactList";
 import SearchBox from "../searchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
@@ -22,7 +22,7 @@ const App = () => {
 			<SearchBox />
 			{error && <p>Something went wrong.</p>}
 			{isLoading && <p>Loading...</p>}
-			<ContactsList />
+			<ContactList />
 		</main>
 	);
 };
