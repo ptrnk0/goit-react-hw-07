@@ -5,6 +5,7 @@ import SearchBox from "../searchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
 import { selectError, selectLoading } from "../../redux/selectors";
+import css from "./App.module.css";
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const App = () => {
 	}, [dispatch]);
 
 	return (
-		<main>
+		<main className={css.main}>
 			<ContacForm />
 			<SearchBox />
 			{error && <p>Something went wrong.</p>}
