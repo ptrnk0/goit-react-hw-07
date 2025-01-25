@@ -22,7 +22,19 @@ export const addContact = createAsyncThunk(
 			const { data } = await axios.post("/contacts", body);
 			return data;
 		} catch (error) {
-			thunkAPI.rejectWithValue(error.message);
+			return thunkAPI.rejectWithValue(error.message);
+		}
+	}
+);
+
+export const deleteContact = createAsyncThunk(
+	"constacts/deleteContact",
+	async (contactId, thunkAPI) => {
+		try {
+			const { data } = await axios.delete(`/contacts/${contactId}`);
+			return data;
+		} catch (error) {
+			return thunkAPI.rejectWithValue(error.message);
 		}
 	}
 );
